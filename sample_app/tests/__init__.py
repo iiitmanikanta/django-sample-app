@@ -35,8 +35,8 @@ def run_tests():
     from django.conf import settings
     from django.test.utils import get_runner
 
-    TestRunner = get_runner(settings)
-    test_suite = TestRunner(verbosity=2, interactive=True, failfast=False)
+    test_runner = get_runner(settings)
+    test_suite = test_runner(verbosity=2, interactive=True, failfast=False)
     return test_suite.run_tests(["sample_app"])
     
 
