@@ -25,7 +25,7 @@ from django.views.generic import RedirectView
 from django.views.generic.dates import DateDetailView
 
 from sample_app.conf import settings
-from sample_app.models import DiaryDay, DiaryDayEntry
+from sample_app.models import DiaryDay
 
 
 REDIRECT_TO_URL_NAME = getattr(settings, 'SAMPLE_APP_REDIRECT_TO_URL_NAME', None)
@@ -36,7 +36,8 @@ class DiaryDayView(DateDetailView):
     date_field = "pub_date"
     month_format = "%b"
     allow_future = True
-
+    
+    @classmethod
     def get_allow_empty(self):
         return False
 
@@ -53,7 +54,7 @@ class DiaryDayView(DateDetailView):
         except ValueError:
             raise Http404(_("Invalid date string '%(date_string)s' given"
                             " format '%(date_format)s'") 
-                          % {'date_string': date_string, 
+                          % {'date_string': date_string,
                              'date_format': date_format})
         except DiaryDay.DoesNotExist:
             raise Http404(_("DiaryDay doesn't exist"))
