@@ -1,3 +1,6 @@
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/ebe5b4b8d67e4760b46fe0e5adbfe654/badge.svg)](https://www.quantifiedcode.com/app/project/ebe5b4b8d67e4760b46fe0e5adbfe654)
+
+
 Django-sample-app
 =================
 
