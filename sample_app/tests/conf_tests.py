@@ -34,7 +34,7 @@ class RedirectToURLNameSettingTestCase(DjangoTestCase):
         self.assertContains(response, render_to_string("index.html"),
                             status_code=200)
         
-    @patch("sample_app.views.REDIRECT_TO_URL_NAME", new=None)
+    @patch ( "sample_app.views.REDIRECT_TO_URL_NAME", new=None)
     def test_setting_to_none_redirects_to_root(self):
         '''Setting REDIRECT_TO_URL_NAME to None redirects to '/'.'''
         response = self.client.get(reverse('diary'), follow=True)
