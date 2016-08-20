@@ -52,8 +52,8 @@ class DiaryDayView(DateDetailView):
             return DiaryDay.objects.get(pub_date=self.date)
         except ValueError:
             raise Http404(_("Invalid date string '%(date_string)s' given"
-                            " format '%(date_format)s'") 
-                          % {'date_string': date_string, 
+                            " format '%(date_format)s'")
+                          % {'date_string': date_string,
                              'date_format': date_format})
         except DiaryDay.DoesNotExist:
             raise Http404(_("DiaryDay doesn't exist"))
